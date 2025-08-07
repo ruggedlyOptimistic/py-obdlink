@@ -3,7 +3,7 @@ from obd import OBDStatus
 import time
 
 print("Establishing a connection to the vehicle...")
-connection = obd.OBD()  # auto-connect to available port
+connection = obd.OBD("/dev/ttyUSB0")  # auto-connect to available port
 
 if connection.status() == OBDStatus.NOT_CONNECTED:
     print("Connection attempt unsuccessful...quitting")
